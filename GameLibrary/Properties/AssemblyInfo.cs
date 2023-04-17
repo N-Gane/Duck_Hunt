@@ -4,23 +4,23 @@ using System.Runtime.InteropServices;
 
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
-// связанных со сборкой.
-[assembly: AssemblyTitle("Duck_Hunt")]
+// связанные со сборкой.
+[assembly: AssemblyTitle("GameLibrary")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Duck_Hunt")]
+[assembly: AssemblyProduct("GameLibrary")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
 // для компонентов COM. Если необходимо обратиться к типу в этой сборке через
-// COM, следует установить атрибут ComVisible в TRUE для этого типа.
+// COM, задайте атрибуту ComVisible значение TRUE для этого типа.
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("82d7d417-bff9-48cc-9e55-bb2e054efd37")]
+[assembly: Guid("68e0751b-eecb-466b-bf7e-faaf106b58df")]
 
 // Сведения о версии сборки состоят из указанных ниже четырех значений:
 //
