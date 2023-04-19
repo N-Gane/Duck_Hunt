@@ -53,7 +53,9 @@
   <ItemGroup>
     <Compile Include="ColliderComponents.cs" />
     <Compile Include="ContentPipe.cs" />
+    <Compile Include="FPS.cs" />
     <Compile Include="GameObject.cs" />
+    <Compile Include="InputAxis.cs" />
     <Compile Include="ObjectScript.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
