@@ -34,7 +34,7 @@ namespace GameEngine
         /// <summary>
         /// Метод для удаления игровых объектов из главного списка
         /// </summary>
-        protected void RemoveGameObjects()
+        protected void RemoveRenderingGameObjects()
         {
             foreach (GameObject removeGameObject in gameObjectsToRemove)
             {
@@ -49,7 +49,7 @@ namespace GameEngine
         /// <summary>
         /// Метод для добавления игровых объектов в главный список
         /// </summary>
-        protected void AddGameObjects()
+        protected void AddRenderingGameObjects()
         {
             gameObjects.AddRange(gameObjectsToAdd);
             gameObjectsToAdd.Clear();

@@ -1,10 +1,7 @@
 ﻿using GameEngine;
 using GameLibrary.Bullet;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GameLibrary.Game;
+
 
 namespace GameLibrary.Player
 {   
@@ -63,7 +60,11 @@ namespace GameLibrary.Player
         /// </summary>
         public override void Update()
         {
-           
+            GameEvents.ChangeBulletCount?.Invoke(isFirstPlayer, BulletBox.Bullet.Count);
+            GameEvents.ChangeTypeBullet?.Invoke(isFirstPlayer, BulletBox.Bullet.ToString());
+
+            if (Script != null)
+                Script.Update(this);
         }
 
     }
