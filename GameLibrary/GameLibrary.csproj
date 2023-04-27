@@ -50,8 +50,16 @@
     <Compile Include="Bullet\Bullet.cs" />
     <Compile Include="Bullet\BulletBox.cs" />
     <Compile Include="Bullet\StandartBullet.cs" />
+    <Compile Include="Duck\BigDuckConstructor.cs" />
+    <Compile Include="Duck\BigDuckDecorator.cs" />
     <Compile Include="Duck\Duck.cs" />
     <Compile Include="Duck\DuckConstructor.cs" />
+    <Compile Include="Duck\DuckDecorator.cs" />
+    <Compile Include="Duck\LittleDuckConstructor.cs" />
+    <Compile Include="Duck\LittleDuckDecorator.cs" />
+    <Compile Include="Duck\MediumDuck.cs" />
+    <Compile Include="Duck\MediumDuckConstructor.cs" />
+    <Compile Include="Exterior\Exterior.cs" />
     <Compile Include="Game\GameEvents.cs" />
     <Compile Include="Scripts\DeathDuckBehavior.cs" />
     <Compile Include="Scripts\DuckBehavior.cs" />
@@ -59,7 +67,11 @@
     <Compile Include="Game\GameObjectConstructor.cs" />
     <Compile Include="Player\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\LittleDuckBehavior.cs" />
+    <Compile Include="Scripts\MediumDuckBehavior.cs" />
     <Compile Include="Scripts\PlayerBehavior.cs" />
+    <Compile Include="Scripts\ScriptCloud.cs" />
+    <Compile Include="Scripts\BigDuckBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GameEngine\GameEngine.csproj">

@@ -47,18 +47,38 @@ namespace GameLibrary.Game
         }
 
 
-        //public GameObject CreateCloud(Vector2 position)
-        //{
-            
+        /// <summary>
+        /// Инициализация облака
+        /// </summary>
+        /// <returns>Игровой объект типа "Декорация"</returns>
+        public GameObject CreateCloud(Vector2 position)
+        {
+            var cloud = new Exterior();
+
+            TextureBox textureCloud = new TextureBox(ContentPipe.LoadTexture("Cloud.png"));
+
+            var scriptCloud = new ScriptCloud();
+            scriptCloud.Start(cloud);
+
+            cloud.SetComponent(textureCloud);
+            cloud.SetComponent(new Position(position, new Vector2(0.3f, 0.3f)));
+            cloud.SetComponent(scriptCloud);
+
+            return cloud;
+        }
 
 
-        //}
+        public GameObject CreateGround(Vector2 position)
+        {
+            var ground = new Exterior();
 
+            TextureBox textureGround = new TextureBox(ContentPipe.LoadTexture("Background.png"));
 
-        //public GameObject CreateGround(Vector2 position)
-        //{
+            ground.SetComponent(textureGround);
+            ground.SetComponent(new Position(position, new Vector2(1.1f, 1.1f)));
 
-        //}
+            return ground;
+        }
 
     }
 }
