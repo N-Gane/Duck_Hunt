@@ -1,10 +1,7 @@
 ﻿using GameEngine;
 using OpenTK;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace GameLibrary.Scripts
 {
@@ -32,7 +29,7 @@ namespace GameLibrary.Scripts
 
             interval = random.NextDouble();
 
-            game = Game.Game.instanse;
+            game = Game.Game.instance;
 
             if (game != null)
             {
@@ -70,7 +67,7 @@ namespace GameLibrary.Scripts
                     game.AddObjectsToRemove(gameObject);
                 }
 
-                gameObject.Collider.Position += new Vector2(0, Time.DeltaTime) * curSpeed;
+                gameObject.Position.Location += new Vector2(0, Time.DeltaTime) * curSpeed;
                 //gameObject.Transform.Position = new Vector2(0, 0);
 
                 if ((timer / (float)interval) >= 0.5f)

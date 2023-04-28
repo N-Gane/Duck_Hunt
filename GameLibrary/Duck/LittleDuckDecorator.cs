@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GameLibrary.Duck
 {
-    internal class LittleDuckDecorator : DuckDecorator
+    public class LittleDuckDecorator : DuckDecorator
     {
         /// <summary>
         /// Конструктор класса

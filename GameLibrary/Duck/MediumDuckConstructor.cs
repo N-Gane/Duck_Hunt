@@ -8,7 +8,7 @@ namespace GameLibrary.Duck
     /// <summary>
     /// Класс, характерезующий конструктор средней утки
     /// </summary>
-    internal class MediumDuckConstructor : DuckConstructor
+    public class MediumDuckConstructor : DuckConstructor
     {
         /// <summary>
         /// Инициализация утки

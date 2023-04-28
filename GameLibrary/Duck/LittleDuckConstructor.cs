@@ -1,17 +1,14 @@
 ﻿using GameEngine;
+using GameLibrary.Scripts;
 using OpenTK;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace GameLibrary.Duck
 {
     /// <summary>
     /// Класс, характерезующий конструктор маленькой утки
     /// </summary>
-    internal class LittleDuckConstructor : DuckConstructor
+    public class LittleDuckConstructor : DuckConstructor
     {
         /// <summary>
         /// Инициализация утки

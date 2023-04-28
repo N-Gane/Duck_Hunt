@@ -3,7 +3,7 @@
 
 namespace GameLibrary.Duck
 {
-    internal class DuckDecorator : Duck
+    public class DuckDecorator : Duck
     {
 
         /// <summary>

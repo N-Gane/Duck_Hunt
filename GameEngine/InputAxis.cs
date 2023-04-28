@@ -20,11 +20,11 @@ namespace GameEngine
             KeyboardState keyState = new KeyboardState();
             int move = 0;
 
-            //try
-            //{
-            keyState = Keyboard.GetState();
-            //}
-            //catch { }
+            try
+            {
+                keyState = Keyboard.GetState();
+            }
+            catch { }
 
             switch (axis)
             {
@@ -58,11 +58,11 @@ namespace GameEngine
         {
             KeyboardState keyState = new KeyboardState();
 
-            //try
-            //{
+            try
+            {
                 keyState = Keyboard.GetState();
-            //}
-            //catch { }
+        }
+            catch { }
 
             return keyState.IsKeyDown(key);
         }

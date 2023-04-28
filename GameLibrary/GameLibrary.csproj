@@ -49,18 +49,31 @@
   <ItemGroup>
     <Compile Include="Bullet\Bullet.cs" />
     <Compile Include="Bullet\BulletBox.cs" />
+    <Compile Include="Bullet\BulletDecorator.cs" />
+    <Compile Include="Bullet\DoubleBulletDecorator.cs" />
     <Compile Include="Bullet\StandartBullet.cs" />
     <Compile Include="Duck\BigDuckConstructor.cs" />
     <Compile Include="Duck\BigDuckDecorator.cs" />
+    <Compile Include="Duck\DecoratorProperities.cs" />
     <Compile Include="Duck\Duck.cs" />
     <Compile Include="Duck\DuckConstructor.cs" />
     <Compile Include="Duck\DuckDecorator.cs" />
+    <Compile Include="Duck\DuckProperities.cs" />
     <Compile Include="Duck\LittleDuckConstructor.cs" />
     <Compile Include="Duck\LittleDuckDecorator.cs" />
     <Compile Include="Duck\MediumDuck.cs" />
     <Compile Include="Duck\MediumDuckConstructor.cs" />
     <Compile Include="Exterior\Exterior.cs" />
+    <Compile Include="Factory\Factory.cs" />
+    <Compile Include="Factory\FactoryDuck.cs" />
+    <Compile Include="Factory\FactoryPrize.cs" />
     <Compile Include="Game\GameEvents.cs" />
+    <Compile Include="PresentsLauncher\DuckLauncher.cs" />
+    <Compile Include="PresentsLauncher\Launcher.cs" />
+    <Compile Include="PresentsLauncher\PresentsLauncher.cs" />
+    <Compile Include="Prize\BulletPrize.cs" />
+    <Compile Include="Prize\DoubleBulletPrize.cs" />
+    <Compile Include="Prize\Prize.cs" />
     <Compile Include="Scripts\DeathDuckBehavior.cs" />
     <Compile Include="Scripts\DuckBehavior.cs" />
     <Compile Include="Game\Game.cs" />
@@ -70,6 +83,7 @@
     <Compile Include="Scripts\LittleDuckBehavior.cs" />
     <Compile Include="Scripts\MediumDuckBehavior.cs" />
     <Compile Include="Scripts\PlayerBehavior.cs" />
+    <Compile Include="Scripts\PrizeBehavior.cs" />
     <Compile Include="Scripts\ScriptCloud.cs" />
     <Compile Include="Scripts\BigDuckBehavior.cs" />
   </ItemGroup>

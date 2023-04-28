@@ -36,7 +36,7 @@ namespace GameLibrary.Scripts
 
             interval = random.NextDouble();
 
-            game = Game.Game.instanse;
+            game = Game.Game.instance;
 
             if (game != null)
             {

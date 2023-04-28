@@ -114,7 +114,7 @@ namespace GameEngine
         /// </summary>
         public void Dispose()
         {
-            /
+            ContentPipe.DelTexture(GetIdTextures());
             TextureDictionary.Clear();
         }
     }

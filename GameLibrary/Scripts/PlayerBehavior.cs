@@ -91,13 +91,24 @@ namespace GameLibrary.Scripts
         {
             if (IsShot && gameObject.Collider.CheckGameObjectIntersection(out GameObject otherGameObject))
             {
-                var script = otherGameObject.Script;
+                if (otherGameObject is Duck.Duck && otherGameObject.Script != null)
+                {
+                    var script = otherGameObject.Script;
+                    if (script is DuckBehavior)
+                    {
+                        (script as DuckBehavior).Action(otherGameObject, gameObject as Player.Player);
+                    }
+                }
 
-                if(script is DuckBehavior)
-                    (script as DuckBehavior).Action(otherGameObject, gameObject as Player.Player);
+                if (otherGameObject is Prize.Prize && otherGameObject.Script != null)
+                {
+                    var script = otherGameObject.Script;
+                    if (script is PrizeBehavior)
+                    {
+                        (script as PrizeBehavior).Action(otherGameObject, gameObject as Player.Player);
+                    }
+                }
             }
-          
-            //if (otherGameObject )
 
         }
 

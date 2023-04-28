@@ -1,6 +1,7 @@
 ﻿
 using OpenTK;
 using GameEngine;
+using GameLibrary.PresentsLauncher;
 
 namespace GameLibrary.Game
 {
@@ -9,20 +10,28 @@ namespace GameLibrary.Game
         /// <summary>
         /// Статическая ссылка на класс
         /// </summary>
-        public static Game instanse = null;
+        public static Game instance = null;
 
         /// <summary>
         /// Конструктор класса
         /// </summary>
         public Game()
         {
-            if (instanse == null)
-                instanse = this;
+            if (instance == null)
+                instance = this;
 
             var gameConstructor = new GameObjectConstructor();
 
-         
 
+            gameObjects.Add(new PresentsLauncherPrize());
+            gameObjects.Add(new PresentsLauncherDuck());
+            gameObjects.Add(gameConstructor.CreateCloud(new Vector2(60, 360)));
+            gameObjects.Add(gameConstructor.CreateCloud(new Vector2(-320, 280)));
+            gameObjects.Add(gameConstructor.CreateCloud(new Vector2(380, 280)));
+            gameObjects.Add(gameConstructor.CreateCloud(new Vector2(720, 360)));
+            gameObjects.Add(gameConstructor.CreateGround(new Vector2(650, 340)));
+            gameObjects.Add(gameConstructor.CreatePlayer(true, new Vector2(100, 0)));
+            gameObjects.Add(gameConstructor.CreatePlayer(false, new Vector2(-100, 0)));
 
         }
 

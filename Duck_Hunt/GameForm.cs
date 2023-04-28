@@ -1,6 +1,4 @@
-﻿using GameLibrary;
-using GameLibrary.Bullet;
-using OpenTK.Graphics.OpenGL;
+﻿using OpenTK.Graphics.OpenGL;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -47,18 +45,18 @@ namespace Duck_Hunt
             {
                 if ((bool)winPlayer)
                 {
-                    BackColor = Color.FromArgb(255, 0, 0);
+                    BackColor = Color.FromArgb(69, 0, 0);
                     labelWin.Text = "The left player win";
                 }
                 else
                 {
-                    BackColor = Color.FromArgb(255, 255, 22);
+                    BackColor = Color.FromArgb(46, 0, 69);
                     labelWin.Text = "The right player win";
                 }
             }
             else
             {
-                BackColor = Color.FromArgb(0, 255, 0);
+                BackColor = Color.FromArgb(28, 74, 25);
                 labelWin.Text = "Draw";
             }
         }
@@ -101,13 +99,6 @@ namespace Duck_Hunt
             label5.Visible = false;
         }
 
-        void GLControl_Paint(object sender, EventArgs e)
-        {
-            if (isRendring)
-                Render();
-
-            gLControl.Invalidate();
-        }
 
         private void Render()
         {
@@ -147,10 +138,12 @@ namespace Duck_Hunt
             label5.Visible = true;
         }
 
-
-        private void GameForm_Load(object sender, EventArgs e)
+        private void GLControl_Paint(object sender, PaintEventArgs e)
         {
+            if (isRendring)
+                Render();
 
+            gLControl.Invalidate();
         }
     }
 }

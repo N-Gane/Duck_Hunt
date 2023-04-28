@@ -31,7 +31,7 @@ namespace GameLibrary.Scripts
         {
             random = new Random();
 
-            game = Game.Game.instanse;
+            game = Game.Game.instance;
 
             if (game != null)
             {

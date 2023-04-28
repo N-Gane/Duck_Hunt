@@ -62,16 +62,18 @@ namespace GameLibrary.Bullet
         /// </summary>
         public void Switch()
         {
-
-            if(Bullet.Count != 0)
+            if (Bullets.Count != 0)
             {
-                indexBullet++;
-                Bullet = Bullets[indexBullet];
-            }
-            else
-            {
-                indexBullet = 0;
-                Bullet = Bullets[indexBullet];
+                if (indexBullet != Bullets.Count - 1)
+                {
+                    indexBullet++;
+                    Bullet = Bullets[indexBullet];
+                }
+                else
+                {
+                    indexBullet = 0;
+                    Bullet = Bullets[indexBullet];
+                }
             }
         }
 

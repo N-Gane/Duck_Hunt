@@ -2,7 +2,7 @@
 
 namespace GameLibrary.Duck
 {
-    internal class MediumDuck : Duck
+    public class MediumDuck : Duck
     {
         /// <summary>
         /// Конструктор класса
