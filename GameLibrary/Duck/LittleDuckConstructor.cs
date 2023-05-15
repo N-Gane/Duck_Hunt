@@ -15,7 +15,7 @@ namespace GameLibrary.Duck
         /// </summary>
         public override Duck CreateDuck()
         {
-            duck = new LittleDuckDecorator(new MediumDuck(250, 2));
+            duck = new LittleDuckDecorator(new MediumDuck(150, 2));
 
             textureDuck = new TextureBox(ContentPipe.LoadTexture("LittleDuckRight.png"));
             textureDuck.Add("Right", ContentPipe.LoadTexture("LittleDuckRight.png"));
