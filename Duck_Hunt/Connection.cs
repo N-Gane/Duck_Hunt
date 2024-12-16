@@ -11,10 +11,10 @@ namespace Duck_Hunt
         public Connection()
         {
             InitializeComponent();
-            if (File.Exists("config.ini"))
+            if (File.Exists("../../config.ini"))
             {
-                ip_textbox.Text = File.ReadLines("config.ini").First();
-                port_textbox.Text = File.ReadLines("config.ini").Skip(1).First();
+                ip_textbox.Text = File.ReadLines("../../config.ini").First();
+                port_textbox.Text = File.ReadLines("../../config.ini").Skip(1).First();
             }
             else MessageBox.Show("Config file not found.");
         }

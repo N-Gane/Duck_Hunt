@@ -33,8 +33,8 @@ namespace GameLibrary.Scripts
             if ((gameObject as Player.Player).isFirstPlayer)
                 Control = new PlayerControl(AxisOfInput.Horizontal, AxisOfInput.Vertical, Key.E, Key.Q);
 
-            //else
-            //Control = new PlayerControl(AxisOfInput.AlternativeHorizontal, AxisOfInput.AlternativeVertical, Key.ShiftRight, Key.ControlRight);
+            else
+                Control = new PlayerControl(AxisOfInput.AlternativeHorizontal, AxisOfInput.AlternativeVertical, Key.ShiftRight, Key.ControlRight);
         }
 
 
