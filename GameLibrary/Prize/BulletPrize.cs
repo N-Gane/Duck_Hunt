@@ -1,6 +1,5 @@
 ﻿using GameLibrary.Bullet;
 
-
 namespace GameLibrary.Prize
 {
     /// <summary>
@@ -13,7 +12,6 @@ namespace GameLibrary.Prize
         /// </summary>
         public BulletPrize() : base()
         {
-
         }
 
         /// <summary>

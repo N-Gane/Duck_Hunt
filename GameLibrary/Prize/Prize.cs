@@ -1,6 +1,5 @@
 ﻿using GameEngine;
 
-
 namespace GameLibrary.Prize
 {
     /// <summary>
@@ -13,7 +12,6 @@ namespace GameLibrary.Prize
         /// </summary>
         public Prize() : base()
         {
-
         }
 
         /// <summary>

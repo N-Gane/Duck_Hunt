@@ -1,6 +1,4 @@
-﻿
-
-namespace GameLibrary.Duck
+﻿namespace GameLibrary.Duck
 {
     public class MediumDuck : Duck
     {

@@ -8,6 +8,7 @@ namespace Server
     {
         private static ServerObject server;
         private static Thread listenThread;
+
         public ServerForm()
         {
             InitializeComponent();
@@ -15,34 +16,39 @@ namespace Server
             Text = "Server. State: off";
             btnTurnOff.Text = "Close";
         }
+
         private void btnTurnOff_Click(object sender, EventArgs e)
         {
             switch (Text)
             {
                 case "Server. State: off":
-                    switch (MessageBox.Show("Close server form?", 
+                    switch (MessageBox.Show("Close server form?",
                                 "Closing", MessageBoxButtons.YesNo))
                     {
                         case DialogResult.Yes:
                             Close();
                             break;
+
                         case DialogResult.No:
                             break;
                     }
                     break;
+
                 case "Server. State: on":
-                    switch (MessageBox.Show("Turn off the server?" + Environment.NewLine + "Current game will be closed.", 
+                    switch (MessageBox.Show("Turn off the server?" + Environment.NewLine + "Current game will be closed.",
                                 "Turning off", MessageBoxButtons.YesNo))
                     {
                         case DialogResult.Yes:
                             server?.CloseAndExit();
                             break;
+
                         case DialogResult.No:
                             break;
                     }
                     break;
             }
         }
+
         private void btnTurnOn_Click(object sender, EventArgs e)
         {
             try

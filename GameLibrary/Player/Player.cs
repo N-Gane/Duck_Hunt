@@ -1,7 +1,7 @@
 ﻿using GameEngine;
+
 using GameLibrary.Bullet;
 using GameLibrary.Game;
-
 
 namespace GameLibrary.Player
 {
@@ -23,13 +23,12 @@ namespace GameLibrary.Player
         /// <summary>
         /// Свойство для  подсчёта очков первого игрока
         /// </summary>
-        public static int FirstPlayerScore { get;  set; }
+        public static int FirstPlayerScore { get; set; }
 
         /// <summary>
         /// Свойство для  подсчёта очков второго игрока
         /// </summary>
-        public static int SecondPlayerScore { get;  set; }
-
+        public static int SecondPlayerScore { get; set; }
 
         /// <summary>
         /// Конструктор объекта класса
@@ -66,6 +65,5 @@ namespace GameLibrary.Player
             if (Script != null)
                 Script.Update(this);
         }
-
     }
 }

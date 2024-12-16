@@ -1,11 +1,9 @@
 ﻿using GameEngine;
 
-
 namespace GameLibrary.Duck
 {
     public class DuckDecorator : Duck
     {
-
         /// <summary>
         /// Декорируемая утка
         /// </summary>

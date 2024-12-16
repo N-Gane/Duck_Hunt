@@ -24,11 +24,11 @@ namespace GameEngine
             TextureDictionary = new Dictionary<string, Texture2D>();
         }
 
-        float delta = 0;
-        float currTime = 0;
+        private float delta = 0;
+        private float currTime = 0;
 
         /// <summary>
-        /// Текущая текстура 
+        /// Текущая текстура
         /// </summary>
         public Texture2D Texture { get; private set; }
 

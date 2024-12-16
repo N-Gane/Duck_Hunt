@@ -11,7 +11,6 @@ namespace GameEngine
         /// <returns>Положительное/отрицательное значение оси</returns>
         public static int GetAxis(AxisOfInput axis)
         {
-
             KeyboardState keyState = new KeyboardState();
             int move = 0;
 
@@ -27,14 +26,17 @@ namespace GameEngine
                     if (keyState.IsKeyDown(Key.D)) move--;
                     if (keyState.IsKeyDown(Key.A)) move++;
                     break;
+
                 case AxisOfInput.Vertical:
                     if (keyState.IsKeyDown(Key.W)) move++;
                     if (keyState.IsKeyDown(Key.S)) move--;
                     break;
+
                 case AxisOfInput.AlternativeHorizontal:
                     if (keyState.IsKeyDown(Key.Right)) move--;
                     if (keyState.IsKeyDown(Key.Left)) move++;
                     break;
+
                 case AxisOfInput.AlternativeVertical:
                     if (keyState.IsKeyDown(Key.Up)) move++;
                     if (keyState.IsKeyDown(Key.Down)) move--;
@@ -71,19 +73,21 @@ namespace GameEngine
             /// Горизонтальная ось
             /// </summary>
             Horizontal = 0,
+
             /// <summary>
             /// Вертикальная ось
             /// </summary>
             Vertical = 1,
+
             /// <summary>
             /// Альтернативная горизонтальная ось
             /// </summary>
             AlternativeHorizontal = 2,
+
             /// <summary>
             /// Альтернативная вертикальная ось
             /// </summary>
             AlternativeVertical = 3,
         }
-
     }
 }

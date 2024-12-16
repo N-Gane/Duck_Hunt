@@ -3,8 +3,8 @@ using GameLibrary.Factory;
 using GameLibrary.Prize;
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using OpenTK;
-using System;
 
 namespace UnitTestGame
 {
@@ -19,7 +19,7 @@ namespace UnitTestGame
         {
             var factory = new FactoryDuck();
 
-            var duck = factory.GetRandomGameObject(new Vector2(1,1), new Vector2(1,1));
+            var duck = factory.GetRandomGameObject(new Vector2(1, 1), new Vector2(1, 1));
             Assert.IsTrue(duck is Duck);
         }
 

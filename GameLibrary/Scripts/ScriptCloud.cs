@@ -1,17 +1,18 @@
 ﻿using GameEngine;
-using OpenTK;
 
+using OpenTK;
 
 namespace GameLibrary.Scripts
 {
     internal class ScriptCloud : ObjectScript
     {
-        float vel = -1;
+        private float vel = -1;
 
         /// <summary>
         /// Инициализация скрипта
         /// </summary>
-        public override void Start(GameObject gameObject = null) { }
+        public override void Start(GameObject gameObject = null)
+        { }
 
         /// <summary>
         /// Обновление скрипта
@@ -23,6 +24,5 @@ namespace GameLibrary.Scripts
 
             gameObject.Position.Location += new Vector2(Time.DeltaTime * vel, 0) * 50;
         }
-
     }
 }

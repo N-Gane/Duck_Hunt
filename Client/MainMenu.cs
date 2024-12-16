@@ -9,6 +9,7 @@ namespace Client
         {
             InitializeComponent();
         }
+
         private void StartSingleplayerGameBtn_Click(object sender, EventArgs e)
         {
             Gamemodes.Singleplayer = true;
@@ -18,6 +19,7 @@ namespace Client
             game.ShowDialog();
             Show();
         }
+
         private void StartMultiplayerGameBtn_Click(object sender, EventArgs e)
         {
             Gamemodes.Singleplayer = false;
@@ -35,10 +37,10 @@ namespace Client
                 case DialogResult.Yes:
                     Application.Exit();
                     break;
+
                 case DialogResult.No:
                     return;
             }
         }
     }
 }
-

@@ -1,6 +1,7 @@
-﻿using OpenTK;
-using System;
+﻿using System;
 using System.Collections.Generic;
+
+using OpenTK;
 
 namespace GameEngine
 {
@@ -126,7 +127,6 @@ namespace GameEngine
             return null;
         }
 
-
         public void DeleteGameObject(GameObject gameObject)
         {
             foreach (var obj in collider)
@@ -140,6 +140,5 @@ namespace GameEngine
         {
             collider.Clear();
         }
-
     }
 }

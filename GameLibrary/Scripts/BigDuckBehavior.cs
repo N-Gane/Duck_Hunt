@@ -1,24 +1,25 @@
-﻿using GameEngine;
-using OpenTK;
-using System;
+﻿using System;
 
+using GameEngine;
+
+using OpenTK;
 
 namespace GameLibrary.Scripts
 {
     internal class BigDuckBehavior : DuckBehavior
     {
-        float curSpeed;
+        private float curSpeed;
 
-        double interval;
+        private double interval;
 
-        Random random;
+        private Random random;
 
-        float timer;
+        private float timer;
 
-        int height;
-        int widch;
+        private int height;
+        private int widch;
 
-        Game.Game game;
+        private Game.Game game;
 
         /// <summary>
         /// Инициализация скрипта
@@ -57,7 +58,6 @@ namespace GameLibrary.Scripts
             }
 
             curSpeed = (gameObject as Duck.Duck).Speed - (gameObject as Duck.Duck).Speed * (timer / (float)interval);
-
 
             if (gameObject != null)
             {

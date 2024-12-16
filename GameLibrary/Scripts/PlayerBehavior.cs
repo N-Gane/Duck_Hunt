@@ -11,17 +11,14 @@ namespace GameLibrary.Scripts
     {
         public bool IsShot { get; set; }
 
-        bool IsNotShot;
-        bool IsSwitch;
+        private bool IsNotShot;
+        private bool IsSwitch;
 
         public float Speed { get; private set; }
 
         public Vector2 direction = new Vector2();
 
         public PlayerControl Control { get; private set; }
-
-
-
 
         public override void Start(GameObject gameObject = null)
         {
@@ -32,11 +29,9 @@ namespace GameLibrary.Scripts
 
             if ((gameObject as Player.Player).isFirstPlayer)
                 Control = new PlayerControl(AxisOfInput.Horizontal, AxisOfInput.Vertical, Key.E, Key.Q);
-
             else
                 Control = new PlayerControl(AxisOfInput.AlternativeHorizontal, AxisOfInput.AlternativeVertical, Key.ShiftRight, Key.ControlRight);
         }
-
 
         public override void Update(GameObject gameObject)
         {
@@ -48,9 +43,7 @@ namespace GameLibrary.Scripts
             gameObject.Position.SetMovement(direction * Speed * Time.DeltaTime);
 
             DetectCollision(gameObject);
-
         }
-
 
         public void UpdateKeys(GameObject gameObject)
         {
@@ -85,9 +78,7 @@ namespace GameLibrary.Scripts
 
             if (!InputAxis.GetButtonDown(Control.ShootKey))
                 IsNotShot = true;
-
         }
-
 
         private void DetectCollision(GameObject gameObject)
         {
@@ -111,12 +102,10 @@ namespace GameLibrary.Scripts
                     }
                 }
             }
-
         }
 
         public struct PlayerControl
         {
-
             public AxisOfInput HorizontalAxis { get; private set; }
 
             public AxisOfInput VerticalAxis { get; private set; }
@@ -125,7 +114,6 @@ namespace GameLibrary.Scripts
 
             public Key GetSwitch { get; private set; }
 
-
             public PlayerControl(AxisOfInput horizontalAxis, AxisOfInput verticalAxis, Key shootKey, Key getSwitch)
             {
                 HorizontalAxis = horizontalAxis;
@@ -133,8 +121,6 @@ namespace GameLibrary.Scripts
                 ShootKey = shootKey;
                 GetSwitch = getSwitch;
             }
-
         }
-
     }
 }

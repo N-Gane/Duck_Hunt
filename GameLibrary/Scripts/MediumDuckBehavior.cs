@@ -1,28 +1,29 @@
-﻿using GameEngine;
-using OpenTK;
-using System;
+﻿using System;
 
+using GameEngine;
+
+using OpenTK;
 
 namespace GameLibrary.Scripts
 {
     internal class MediumDuckBehavior : DuckBehavior
     {
-        float vel;
+        private float vel;
 
-        Random random;
+        private Random random;
 
-        int height;
-        int widch;
+        private int height;
+        private int widch;
 
-        float timer = 0;
-        float timerWings;
+        private float timer = 0;
+        private float timerWings;
 
-        float coeffHeight = 0.5f;
-        float coeffSpeed = 5;
+        private float coeffHeight = 0.5f;
+        private float coeffSpeed = 5;
 
-        Game.Game game;
+        private Game.Game game;
 
-        bool wingsDown = false;
+        private bool wingsDown = false;
 
         /// <summary>
         /// Инициализация скрипта
@@ -58,7 +59,6 @@ namespace GameLibrary.Scripts
         /// </summary>
         public override void Update(GameObject gameObject)
         {
-
             timer += Time.DeltaTime;
 
             gameObject.Position.SetMovement(new Vector2(vel, (float)Math.Sin(timer * coeffSpeed) / coeffHeight) * (gameObject as Duck.Duck).Speed * Time.DeltaTime);

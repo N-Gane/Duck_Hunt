@@ -1,8 +1,10 @@
 ﻿using GameEngine;
+
 using GameLibrary.Duck;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using OpenTK;
-using System;
 
 namespace UnitTestGame
 {
@@ -15,7 +17,7 @@ namespace UnitTestGame
         [TestMethod]
         public void TestGameObjectMovement()
         {
-            var gameObject = new MediumDuck(10,2);
+            var gameObject = new MediumDuck(10, 2);
             gameObject.SetComponent(new Position(new Vector2(0f, 0f), new Vector2(1, 1)));
 
             Vector2 offset = new Vector2(1f, 1f);

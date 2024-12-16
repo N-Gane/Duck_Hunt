@@ -2,9 +2,8 @@
 {
     public abstract class FPS
     {
-
-        static float timer;
-        static int currAccoun;
+        private static float timer;
+        private static int currAccoun;
 
         public static int CurrAccount { get; private set; }
 
@@ -19,8 +18,6 @@
                 CurrAccount = currAccoun;
                 currAccoun = 0;
             }
-
         }
-
     }
 }

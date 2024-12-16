@@ -1,6 +1,4 @@
-﻿
-
-namespace GameLibrary.Bullet
+﻿namespace GameLibrary.Bullet
 {
     public class DoubleBulletDecorator : BulletDecorator
     {
@@ -10,7 +8,6 @@ namespace GameLibrary.Bullet
         /// <param name="bullet"></param>
         public DoubleBulletDecorator(Bullet bullet) : base(bullet)
         {
-
         }
 
         /// <summary>

@@ -1,18 +1,18 @@
 ﻿using GameLibrary.Bullet;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace UnitTestGame
 {
     [TestClass]
     public class BulletDecoratorTest
     {
-        StandartBullet bullet;
+        private StandartBullet bullet;
 
         [TestInitialize]
         public void InitalizeBullet()
         {
-            bullet = new StandartBullet(2,10);
+            bullet = new StandartBullet(2, 10);
         }
 
         /// <summary>

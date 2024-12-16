@@ -18,24 +18,28 @@ namespace Client
         private readonly Player[] Players = new Player[2];
         private readonly Property[] Properties = new Property[40];
         private readonly PictureBox[] Tile;
+
         private class Property
         {
             public bool Buyable, Owned;
             public string Color, Name;
             public int Price, Rent;
         }
+
         private class Player
         {
             public int Balance = 1500, NumberOfPropertiesOwned, Jail, Position;
             public bool InJail, Loser;
             public readonly int[] PropertiesOwned = new int[40];
         }
+
         private class ReceivedMessage
         {
             public bool InJail, Loser;
             public int EndPosition, Balance, Jail;
             public readonly int[] PropertiesOwned = new int[40];
         }
+
         public Game()
         {
             InitializeComponent();
@@ -91,6 +95,7 @@ namespace Client
                             RedConnected = true;
                             CurrentPlayerId = 0;
                             break;
+
                         case "Blue":
                             BlueConnected = true;
                             CurrentPlayerId = 1;
@@ -101,7 +106,9 @@ namespace Client
                 {
                     MessageBox.Show(ex.Message);
                 }
+
             #region Creating tiles and players
+
             Tile = new[]
             {
                 tile0, tile1, tile2, tile3, tile4, tile5, tile6, tile7, tile8, tile9, tile10,
@@ -151,10 +158,13 @@ namespace Client
             CreateTile("Boardwalk", true, "Blue", 400, 39);
             Players[0] = new Player();
             Players[1] = new Player();
-            #endregion
+
+            #endregion Creating tiles and players
+
             UpdatePlayersStatusBoxes();
             buyBtn.Enabled = false;
         }
+
         private void CreateTile(string tileName, bool tileBuyable, string tileColor, int tilePrice, int tilePosition)
         {
             var property = new Property
@@ -166,6 +176,7 @@ namespace Client
             };
             Properties[tilePosition] = property;
         }
+
         private string PropertiesToString(int[] propertyList)
         {
             var tempString = "";
@@ -174,6 +185,7 @@ namespace Client
                     tempString = tempString + Properties[propertyList[i]].Name + ", " + Properties[propertyList[i]].Color + "\n";
             return tempString;
         }
+
         private void UpdatePlayersStatusBoxes()
         {
             redPlayerStatusBox_richtextbox.Text = "Red player" + "\n"
@@ -183,11 +195,13 @@ namespace Client
                 + "Balance: " + Players[1].Balance + "\n"
                 + PropertiesToString(Players[1].PropertiesOwned);
         }
+
         private void ChangeBalance(Player player, int cashChange)
         {
             player.Balance += cashChange;
             UpdatePlayersStatusBoxes();
         }
+
         private void InJail(int currentPlayer)
         {
             Players[currentPlayer].Jail += 1;
@@ -199,6 +213,7 @@ namespace Client
                     currentPlayersTurn_textbox.Text =
                         "Red player, you are in jail!\r\nYou can move next turn. ";
                     break;
+
                 case 1:
                     currentPlayersTurn_textbox.Text =
                         "Blue player, you are in jail!\r\nYou can move next turn. ";
@@ -214,12 +229,14 @@ namespace Client
                     currentPlayersTurn_textbox.Text =
                         "Red player, you are free! ";
                     break;
+
                 case 1:
                     currentPlayersTurn_textbox.Text =
                         "Blue player, you are free! ";
                     break;
             }
         }
+
         private int GetRent(int dice)
         {
             switch (Properties[CurrentPosition].Color)
@@ -227,39 +244,50 @@ namespace Client
                 case "Null":
                     Properties[CurrentPosition].Rent = 0;
                     break;
+
                 case "Station":
                     Properties[CurrentPosition].Rent = dice * 20;
                     break;
+
                 case "White":
                     Properties[CurrentPosition].Rent = 0;
                     break;
+
                 case "Brown":
                     Properties[CurrentPosition].Rent = 60;
                     break;
+
                 case "Turquoise":
                     Properties[CurrentPosition].Rent = 120;
                     break;
+
                 case "Purple":
                     Properties[CurrentPosition].Rent = 160;
                     break;
+
                 case "Orange":
                     Properties[CurrentPosition].Rent = 200;
                     break;
+
                 case "Red":
                     Properties[CurrentPosition].Rent = 240;
                     break;
+
                 case "Yellow":
                     Properties[CurrentPosition].Rent = 280;
                     break;
+
                 case "Green":
                     Properties[CurrentPosition].Rent = 320;
                     break;
+
                 case "Blue":
                     Properties[CurrentPosition].Rent = 400;
                     break;
             }
             return Properties[CurrentPosition].Rent;
         }
+
         private void DrawCircle(int position, int playerId)
         {
             int x = Tile[position].Location.X, y = Tile[position].Location.Y;
@@ -299,6 +327,7 @@ namespace Client
                     }
             }
         }
+
         private void ReceiveMessage()
         {
             while (true)
@@ -325,6 +354,7 @@ namespace Client
                                         buyBtn.Enabled = false;
                                         endTurnBtn.Enabled = true;
                                         break;
+
                                     case "Blue":
                                         currentPlayersTurn_textbox.Text = "Red player is making his turn right now, wait";
                                         break;
@@ -367,6 +397,7 @@ namespace Client
                             case 0:
                                 subString = "Blue player's turn results: ";
                                 break;
+
                             case 1:
                                 subString = "Red player's turn results: ";
                                 break;
@@ -390,6 +421,7 @@ namespace Client
                             case "TRUE":
                                 receivedMessage.InJail = true;
                                 break;
+
                             case "FALSE":
                                 receivedMessage.InJail = false;
                                 break;
@@ -408,6 +440,7 @@ namespace Client
                             case "TRUE":
                                 receivedMessage.Loser = true;
                                 break;
+
                             case "FALSE":
                                 receivedMessage.Loser = false;
                                 break;
@@ -431,6 +464,7 @@ namespace Client
                                 case 0:
                                     if (MessageBox.Show("Red player has won!", "Message", MessageBoxButtons.OK) is DialogResult.OK) Application.Exit();
                                     break;
+
                                 case 1:
                                     if (MessageBox.Show("Blue player has won!", "Message", MessageBoxButtons.OK) is DialogResult.OK) Application.Exit();
                                     break;
@@ -467,6 +501,7 @@ namespace Client
                                 CurrentPlayerId = 0;
                                 UpdatePlayersStatusBoxes();
                                 break;
+
                             case 1:
                                 CurrentPlayerId = 0;
                                 MoveIcon(receivedMessage.EndPosition);
@@ -521,6 +556,7 @@ namespace Client
                     Disconnect();
                 }
         }
+
         private void Lose()
         {
             Players[CurrentPlayerId].Loser = true;
@@ -532,17 +568,20 @@ namespace Client
                 case 0 when Players[0].Loser:
                     currentPlayersTurn_textbox.Text = "Red player has lost!";
                     break;
+
                 case 1 when Players[1].Loser:
                     currentPlayersTurn_textbox.Text = "Blue player has lost!";
                     break;
             }
         }
+
         private static void Disconnect()
         {
             Stream?.Close();
             Client?.Close();
             Environment.Exit(0);
         }
+
         private void MoveIcon(int position)
         {
             int x, y;
@@ -553,6 +592,7 @@ namespace Client
                     y = Tile[position].Location.Y;
                     redPawnIcon.Location = new Point(x, y);
                     break;
+
                 case 1:
                     x = Tile[position].Location.X;
                     y = Tile[position].Location.Y;
@@ -560,6 +600,7 @@ namespace Client
                     break;
             }
         }
+
         private async Task<int> MoveTileByTile(int from, int to)
         {
             if (to < 40)
@@ -585,6 +626,7 @@ namespace Client
             }
             return 1;
         }
+
         private void ThrowDiceBtn_Click(object sender, EventArgs e)
         {
             switch (CurrentPlayerId)
@@ -592,6 +634,7 @@ namespace Client
                 case 0:
                     currentPlayersTurn_textbox.Text = "Red player's turn. ";
                     break;
+
                 case 1:
                     currentPlayersTurn_textbox.Text = "Blue player's turn. ";
                     break;
@@ -615,14 +658,17 @@ namespace Client
                     buyBtn.Enabled = false;
                     visitedGo = true;
                     break;
+
                 case 10 when Players[CurrentPlayerId].InJail is false:
                     buyBtn.Enabled = false;
                     visitedJailExploration = true;
                     break;
+
                 case 20:
                     buyBtn.Enabled = false;
                     visitedFreeParking = true;
                     break;
+
                 case 30:
                     CurrentPosition = 10;
                     Players[CurrentPlayerId].InJail = true;
@@ -648,6 +694,7 @@ namespace Client
                 case true:
                     MoveIcon(10);
                     break;
+
                 case false:
                     _ = MoveTileByTile(positionBeforeDicing, positionAfterDicing);
                     break;
@@ -668,6 +715,7 @@ namespace Client
                     case 0:
                         currentPlayersTurn_textbox.Text = "Red player, you are in jail! \r\nYou will skip this and next turn. ";
                         break;
+
                     case 1:
                         currentPlayersTurn_textbox.Text = "Blue player, you are in jail! \r\nYou will skip this and next turn. ";
                         break;
@@ -686,6 +734,7 @@ namespace Client
                     case 0:
                         if (MessageBox.Show("Red player has won!", "Message", MessageBoxButtons.OK) is DialogResult.OK) Application.Exit();
                         break;
+
                     case 1:
                         if (MessageBox.Show("Blue player has won!", "Message", MessageBoxButtons.OK) is DialogResult.OK) Application.Exit();
                         break;
@@ -705,6 +754,7 @@ namespace Client
                         Stream.Write(Encoding.Unicode.GetBytes(rentMessage), 0, Encoding.Unicode.GetBytes(rentMessage).Length);
                     }
                     break;
+
                 case 1:
                     ChangeBalance(Players[1], -GetRent(Dice));
                     ChangeBalance(Players[0], GetRent(Dice));
@@ -721,6 +771,7 @@ namespace Client
                 case 0:
                     currentPlayersTurn_textbox.Text = "Red player, you landed on another player's tile and payed ";
                     break;
+
                 case 1:
                     currentPlayersTurn_textbox.Text = "Blue player, you landed on another player's tile and payed ";
                     break;
@@ -728,6 +779,7 @@ namespace Client
             if (CurrentPosition is 5 || CurrentPosition is 15 || CurrentPosition is 25 || CurrentPosition is 35) currentPlayersTurn_textbox.Text += Dice * 20;
             else currentPlayersTurn_textbox.Text += Properties[CurrentPosition].Rent;
         }
+
         private void BuyBtn_Click(object sender, EventArgs e)
         {
             if (Properties[CurrentPosition].Buyable && Properties[CurrentPosition].Owned is false)
@@ -745,6 +797,7 @@ namespace Client
             else currentPlayersTurn_textbox.Text = "You cannot do that right now";
             if (Players[CurrentPlayerId].Balance <= 0) Lose();
         }
+
         private void QuitGameBtn_Click(object sender, EventArgs e)
         {
             var dialog = MessageBox.Show("Do you really want ot exit?", "Exit", MessageBoxButtons.YesNo);
@@ -758,10 +811,12 @@ namespace Client
                     Disconnect();
                     Application.Exit();
                     break;
+
                 case DialogResult.No:
                     break;
             }
         }
+
         private void EndTurnBtn_Click(object sender, EventArgs e)
         {
             if (Gamemodes.Multiplayer)
@@ -778,6 +833,7 @@ namespace Client
                         case 0:
                             if (MessageBox.Show("Red player has won!", "Message", MessageBoxButtons.OK) is DialogResult.OK) Application.Exit();
                             break;
+
                         case 1:
                             if (MessageBox.Show("Blue player has won!", "Message", MessageBoxButtons.OK) is DialogResult.OK) Application.Exit();
                             break;
@@ -790,6 +846,7 @@ namespace Client
                     case 0:
                         turnLogString = "Red player's turn results: ";
                         break;
+
                     case 1:
                         turnLogString = "Blue player's turn results: ";
                         break;
@@ -829,6 +886,7 @@ namespace Client
                     case 0:
                         currentPlayersTurn_textbox.Text = "Red player's turn. ";
                         break;
+
                     case 1:
                         currentPlayersTurn_textbox.Text = "Blue player's turn. ";
                         break;
@@ -854,6 +912,7 @@ namespace Client
                         case 0:
                             if (MessageBox.Show("Red player has won!", "Message", MessageBoxButtons.OK) is DialogResult.OK) Application.Exit();
                             break;
+
                         case 1:
                             if (MessageBox.Show("Blue player has won!", "Message", MessageBoxButtons.OK) is DialogResult.OK) Application.Exit();
                             break;

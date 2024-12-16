@@ -1,6 +1,4 @@
-﻿
-
-namespace GameLibrary.Bullet
+﻿namespace GameLibrary.Bullet
 {
     public class BulletDecorator : Bullet
     {

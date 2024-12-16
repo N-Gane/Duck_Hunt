@@ -1,18 +1,18 @@
 ﻿using GameLibrary.Duck;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 
 namespace UnitTestGame
 {
     [TestClass]
     public class DuckDecoratorTest
     {
-        MediumDuck duck;
+        private MediumDuck duck;
 
         [TestInitialize]
         public void InitalizeDuck()
         {
-            duck = new MediumDuck(10,2);
+            duck = new MediumDuck(10, 2);
         }
 
         /// <summary>

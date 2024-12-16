@@ -97,10 +97,7 @@
 //    }
 //}
 
-
-
 using System;
-using System.Diagnostics;
 using System.Net.Sockets;
 using System.Text;
 using System.Windows.Forms;
@@ -112,6 +109,7 @@ namespace Server
         private readonly TcpClient Client;
         private readonly ServerObject server;
         private string userName;
+
         public ClientObject(TcpClient tcpClient, ServerObject serverObject)
         {
             Id = Guid.NewGuid().ToString();
@@ -119,8 +117,10 @@ namespace Server
             server = serverObject;
             serverObject.AddConnection(this);
         }
+
         protected internal string Id { get; }
         protected internal NetworkStream Stream { get; private set; }
+
         public void Process()
         {
             try
@@ -263,6 +263,7 @@ namespace Server
                 });
             }
         }
+
         private string GetMessage()
         {
             var data = new byte[256];
@@ -276,6 +277,7 @@ namespace Server
             //  Debug.WriteLine(builder.ToString());
             return builder.ToString();
         }
+
         protected internal void Close()
         {
             Stream.Close();
@@ -283,6 +285,3 @@ namespace Server
         }
     }
 }
-
-
-

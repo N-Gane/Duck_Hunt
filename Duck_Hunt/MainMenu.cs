@@ -1,5 +1,4 @@
-﻿using GameLibrary.Game;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace Duck_Hunt
@@ -10,6 +9,7 @@ namespace Duck_Hunt
         {
             InitializeComponent();
         }
+
         private void startSingleplayerGameBtn_Click(object sender, EventArgs e)
         {
             Gamemodes.Singleplayer = true;
@@ -19,9 +19,6 @@ namespace Duck_Hunt
             game.ShowDialog();
             Show();
         }
-      
-
-    
 
         private void startMultiplayerGameBtn_Click(object sender, EventArgs e)
         {
@@ -40,10 +37,10 @@ namespace Duck_Hunt
                 case DialogResult.Yes:
                     Application.Exit();
                     break;
+
                 case DialogResult.No:
                     return;
             }
         }
     }
 }
-

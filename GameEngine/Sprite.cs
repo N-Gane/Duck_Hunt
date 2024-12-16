@@ -1,7 +1,6 @@
 ﻿using OpenTK;
 using OpenTK.Graphics.OpenGL;
 
-
 namespace GameEngine
 {
     /// <summary>
@@ -32,7 +31,6 @@ namespace GameEngine
 
             for (int i = 0; i < 4; i++)
             {
-
                 GL.TexCoord2(vertices[i]);
 
                 vertices[i].X *= texture.Width;
@@ -45,6 +43,5 @@ namespace GameEngine
 
             GL.End();
         }
-
     }
 }

@@ -6,6 +6,7 @@ namespace Client
     internal static class Program
     {
         public static ColorChoosing colorChoosing;
+
         [STAThread]
         private static void Main()
         {
@@ -14,6 +15,7 @@ namespace Client
             Application.Run(new MainMenu());
         }
     }
+
     internal static class Gamemodes
     {
         public static bool Singleplayer { get; set; }

@@ -1,13 +1,12 @@
 ﻿using GameEngine;
-using OpenTK;
 
+using OpenTK;
 
 namespace GameLibrary.Scripts
 {
     public class DeathDuckBehavior : ObjectScript
     {
-
-        Game.Game game;
+        private Game.Game game;
 
         /// <summary>
         /// Инициализация скрипта

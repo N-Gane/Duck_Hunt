@@ -1,5 +1,4 @@
-﻿
-namespace GameLibrary.Bullet
+﻿namespace GameLibrary.Bullet
 {
     public abstract class Bullet
     {
@@ -12,7 +11,6 @@ namespace GameLibrary.Bullet
         /// Количество пуль
         /// </summary>
         public abstract int Count { get; }
-
 
         protected float currPower;
         protected int currCount;
@@ -40,6 +38,5 @@ namespace GameLibrary.Bullet
 
             return false;
         }
-
     }
 }

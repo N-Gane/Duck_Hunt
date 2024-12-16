@@ -38,16 +38,18 @@ namespace GameEngine
                 case TextureBox textureBox:
                     Texture = textureBox;
                     break;
+
                 case ObjectScript objectScript:
                     Script = objectScript;
                     break;
+
                 case SystemCollider systemCollider:
                     Collider = systemCollider;
                     break;
+
                 case Position position:
                     Position = position;
                     break;
-
             }
         }
 

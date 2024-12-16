@@ -12,7 +12,6 @@ namespace GameLibrary.Prize
         /// </summary>
         public DoubleBulletPrize() : base()
         {
-
         }
 
         /// <summary>

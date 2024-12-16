@@ -15,6 +15,5 @@ namespace GameLibrary
             if (Script != null)
                 Script.Update(this);
         }
-
     }
 }

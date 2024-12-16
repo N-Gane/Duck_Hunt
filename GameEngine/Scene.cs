@@ -1,6 +1,7 @@
-﻿using OpenTK;
-using System;
+﻿using System;
 using System.Collections.Generic;
+
+using OpenTK;
 
 namespace GameEngine
 {
@@ -65,7 +66,7 @@ namespace GameEngine
         }
 
         /// <summary>
-        /// Метод для для добавления объектов в список добавлений 
+        /// Метод для для добавления объектов в список добавлений
         /// </summary>
         /// <param name="gameObject"></param>
         public void AddObjectsToAdd(GameObject gameObject)
@@ -105,6 +106,5 @@ namespace GameEngine
         /// Метод, завершающий игру
         /// </summary>
         protected abstract void EndGame();
-
     }
 }

@@ -1,6 +1,6 @@
-﻿using OpenTK;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+using OpenTK;
 
 namespace GameEngine
 {
@@ -160,7 +160,6 @@ namespace GameEngine
             intersecctedGameObject = null;
             return false;
         }
-
 
         /// <summary>
         /// Обновление вершин твёрдого тела

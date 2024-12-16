@@ -34,6 +34,5 @@ namespace GameLibrary.Duck
             if (Script != null)
                 Script.Update(this);
         }
-
     }
 }

@@ -1,6 +1,4 @@
-﻿
-
-namespace GameLibrary.Game
+﻿namespace GameLibrary.Game
 {
     /// <summary>
     /// Статический класс событий игры

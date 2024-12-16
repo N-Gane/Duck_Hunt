@@ -1,7 +1,8 @@
 ﻿using GameEngine;
-using GameLibrary.Scripts;
-using OpenTK;
 
+using GameLibrary.Scripts;
+
+using OpenTK;
 
 namespace GameLibrary.Game
 {
@@ -42,10 +43,8 @@ namespace GameLibrary.Game
             gameObject.SetComponent(new Position(position, new Vector2(0.5f, 0.5f)));
             gameObject.SetComponent(playerScript1);
 
-
             return gameObject;
         }
-
 
         /// <summary>
         /// Инициализация облака
@@ -67,7 +66,6 @@ namespace GameLibrary.Game
             return cloud;
         }
 
-
         public GameObject CreateGround(Vector2 position)
         {
             var ground = new Exterior();
@@ -79,6 +77,5 @@ namespace GameLibrary.Game
 
             return ground;
         }
-
     }
 }

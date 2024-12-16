@@ -23,11 +23,9 @@
         /// </summary>
         public override int Count => currCount;
 
-
         public override string ToString()
         {
             return "Standart power";
         }
-
     }
 }

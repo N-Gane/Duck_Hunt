@@ -1,6 +1,7 @@
-﻿
-using GameEngine;
+﻿using GameEngine;
+
 using GameLibrary.PresentsLauncher;
+
 using OpenTK;
 
 namespace GameLibrary.Game
@@ -22,7 +23,6 @@ namespace GameLibrary.Game
 
             var gameConstructor = new GameObjectConstructor();
 
-
             gameObjects.Add(new PresentsLauncherPrize());
             gameObjects.Add(new PresentsLauncherDuck());
             gameObjects.Add(gameConstructor.CreateCloud(new Vector2(60, 360)));
@@ -32,7 +32,6 @@ namespace GameLibrary.Game
             gameObjects.Add(gameConstructor.CreateGround(new Vector2(650, 340)));
             gameObjects.Add(gameConstructor.CreatePlayer(true, new Vector2(100, 0)));
             gameObjects.Add(gameConstructor.CreatePlayer(false, new Vector2(-100, 0)));
-
         }
 
         /// <summary>
@@ -42,7 +41,6 @@ namespace GameLibrary.Game
         {
             Time.UpdateTime();
             FPS.Update(Time.DeltaTime);
-
 
             for (int i = 0; i < gameObjects.Count; i++)
             {
@@ -57,7 +55,6 @@ namespace GameLibrary.Game
 
             RemoveRenderingGameObjects();
             AddRenderingGameObjects();
-
         }
 
         /// <summary>
@@ -72,6 +69,5 @@ namespace GameLibrary.Game
             else
                 GameEvents.EndGame();
         }
-
     }
 }

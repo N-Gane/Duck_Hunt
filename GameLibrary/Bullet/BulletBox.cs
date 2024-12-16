@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 
-
 namespace GameLibrary.Bullet
 {
     public class BulletBox
@@ -10,12 +9,12 @@ namespace GameLibrary.Bullet
         /// </summary>
         public Bullet Bullet { get; set; }
 
-        int indexBullet;
+        private int indexBullet;
 
         /// <summary>
         /// Лист с различными видами пуль
         /// </summary>
-    public     List<Bullet> Bullets;
+        public List<Bullet> Bullets;
 
         /// <summary>
         /// Конструктор класса
@@ -85,6 +84,5 @@ namespace GameLibrary.Bullet
         {
             Bullet = Bullets[index];
         }
-
     }
 }

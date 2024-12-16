@@ -1,7 +1,8 @@
 ﻿using GameEngine;
-using GameLibrary.Duck;
-using OpenTK;
 
+using GameLibrary.Duck;
+
+using OpenTK;
 
 namespace GameLibrary.Factory
 {
@@ -10,9 +11,9 @@ namespace GameLibrary.Factory
     /// </summary>
     public class FactoryDuck : Factory
     {
-        MediumDuckConstructor mediumDuck;
-        LittleDuckConstructor littleDuck;
-        BigDuckConstructor bigDuck;
+        private MediumDuckConstructor mediumDuck;
+        private LittleDuckConstructor littleDuck;
+        private BigDuckConstructor bigDuck;
 
         public FactoryDuck()
         {
@@ -32,8 +33,10 @@ namespace GameLibrary.Factory
             {
                 case 1:
                     return mediumDuck.CreateDuck();
+
                 case 2:
                     return littleDuck.CreateDuck();
+
                 case 3:
                     return bigDuck.CreateDuck();
             }

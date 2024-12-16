@@ -1,8 +1,10 @@
 ﻿using GameEngine;
+
 using GameLibrary.Duck;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using OpenTK;
-using System;
 
 namespace UnitTestGame
 {
@@ -10,14 +12,14 @@ namespace UnitTestGame
     public class ColliderTest
     {
         /// <summary>
-        /// Тестирование коллизий 
+        /// Тестирование коллизий
         /// </summary>
         [TestMethod]
         public void TestCollider()
         {
-            var firstObject = new MediumDuck(10,2);
+            var firstObject = new MediumDuck(10, 2);
             firstObject.SetComponent(new Position(new Vector2(1f, 1f), new Vector2(1, 1)));
-            
+
             var firstCollider = new ColliderComponents();
             firstCollider.SetGameObject(firstObject);
 

@@ -1,7 +1,8 @@
 ﻿using GameEngine;
-using GameLibrary.Scripts;
-using OpenTK;
 
+using GameLibrary.Scripts;
+
+using OpenTK;
 
 namespace GameLibrary.Duck
 {
@@ -46,6 +47,5 @@ namespace GameLibrary.Duck
 
             return duck;
         }
-
     }
 }

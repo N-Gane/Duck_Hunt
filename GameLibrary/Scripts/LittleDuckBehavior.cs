@@ -1,31 +1,32 @@
-﻿using GameEngine;
-using OpenTK;
-using System;
+﻿using System;
 
+using GameEngine;
+
+using OpenTK;
 
 namespace GameLibrary.Scripts
 {
     public class LittleDuckBehavior : DuckBehavior
     {
-        float vel = 1;
-        float dir = 1;
+        private float vel = 1;
+        private float dir = 1;
 
-        float curVel;
-        float curDir;
+        private float curVel;
+        private float curDir;
 
-        double interval;
+        private double interval;
 
-        Random random;
+        private Random random;
 
-        float timer;
-        float timerWings;
+        private float timer;
+        private float timerWings;
 
-        int height;
-        int widch;
+        private int height;
+        private int widch;
 
-        Game.Game game;
+        private Game.Game game;
 
-        bool wingsDown = false;
+        private bool wingsDown = false;
 
         /// <summary>
         /// Инициализация скрипта

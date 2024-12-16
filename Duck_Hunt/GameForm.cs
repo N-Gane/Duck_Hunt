@@ -1,15 +1,5 @@
-﻿using GameEngine;
-
-using GameLibrary.Game;
-using GameLibrary.Player;
-
-using OpenTK;
-using OpenTK.Graphics.OpenGL;
-
-using System;
-using System.Diagnostics;
+﻿using System;
 using System.Drawing;
-using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
@@ -17,6 +7,14 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
+using GameEngine;
+
+using GameLibrary.Game;
+using GameLibrary.Player;
+
+using OpenTK;
+using OpenTK.Graphics.OpenGL;
 
 namespace Duck_Hunt
 {
@@ -36,7 +34,7 @@ namespace Duck_Hunt
             public string BulletType;
         }
 
-        Game game = new Game();
+        private Game game = new Game();
 
         public GameForm()
         {
@@ -90,6 +88,7 @@ namespace Duck_Hunt
                             RedConnected = true;
                             CurrentPlayerId = 0;
                             break;
+
                         case "Blue":
                             BlueConnected = true;
                             CurrentPlayerId = 1;
@@ -100,12 +99,11 @@ namespace Duck_Hunt
                 {
                     MessageBox.Show(ex.Message);
                 }
-           
+
             Players = game.gameObjects
     .Where(obj => obj is Player)
     .Cast<Player>()
     .ToArray();
-
 
             GameEvents.ChangeBulletCount += ChangeBulletCount;
             GameEvents.EndGame += EndGame;
@@ -166,7 +164,6 @@ namespace Duck_Hunt
             //    else
             //    TypeBulletRight.Text = value.ToString();
 
-
             //     SendPlayerInfo();
         }
 
@@ -201,7 +198,6 @@ namespace Duck_Hunt
             labelWin.Visible = false;
             label5.Visible = false;
         }
-
 
         private void Render()
         {
@@ -241,9 +237,7 @@ namespace Duck_Hunt
                 MessageBox.Show($"Error sending start game message: {ex.Message}");
             }
 
-
             StartGame();
-
         }
 
         private void StartGame()
@@ -261,9 +255,8 @@ namespace Duck_Hunt
             label5.Visible = true;
 
             _gameStarted = true; // Устанавливаем флаг, что игра началась
-         //   MessageBox.Show("The game has started!");
+                                 //   MessageBox.Show("The game has started!");
         }
-
 
         private void GLControl_Paint(object sender, PaintEventArgs e)
         {
@@ -280,10 +273,8 @@ namespace Duck_Hunt
             public int BulletCount { get; set; }
             public string BulletType { get; set; }
 
-
             public float X { get; set; }
             public float Y { get; set; }
-
         }
 
         private void ReceiveMessage()
@@ -302,7 +293,7 @@ namespace Duck_Hunt
 
                     var message = builder.ToString();
 
-                //    Debug.WriteLine("Message from another client " + message);
+                    //    Debug.WriteLine("Message from another client " + message);
 
                     if (message == "StartGame")
                     {
@@ -333,7 +324,6 @@ namespace Duck_Hunt
 
                                 // Обновляем UI
 
-
                                 // Обновление позиции игрока
                                 foreach (var player in Players)
                                 {
@@ -343,7 +333,6 @@ namespace Duck_Hunt
 
                                         Console.WriteLine(Player.FirstPlayerScore.ToString());
                                         Console.WriteLine(Player.SecondPlayerScore.ToString());
-
 
                                         player.Position.Location = new Vector2(positionX, positionY);
                                         //  Console.WriteLine($"Updated opponent position: X = {positionX}, Y = {positionY}");
@@ -366,7 +355,6 @@ namespace Duck_Hunt
                             }
                         }
                     }
-
                     else
                     {
                         switch (message)
@@ -398,7 +386,6 @@ namespace Duck_Hunt
             }
         }
 
-
         private void SendPlayerInfo()
         {
             try
@@ -420,7 +407,6 @@ namespace Duck_Hunt
 
                             X = currentPlayer.Position.Location.X, // Координата X
                             Y = currentPlayer.Position.Location.Y  // Координата Y
-
                         };
 
                         string message = Newtonsoft.Json.JsonConvert.SerializeObject(playerInfo);
@@ -436,7 +422,6 @@ namespace Duck_Hunt
                 MessageBox.Show($"Error sending player info: {ex.Message}");
             }
         }
-
 
         private bool _isSendingInfo = true; // Флаг для управления отправкой
         private const int SendInterval = 500; // Интервал отправки данных в миллисекундах

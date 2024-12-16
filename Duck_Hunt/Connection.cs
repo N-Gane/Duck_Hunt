@@ -1,5 +1,4 @@
-﻿using Duck_Hunt;
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
@@ -48,7 +47,5 @@ namespace Duck_Hunt
             DialogResult = DialogResult.OK;
             Close();
         }
-
-      
     }
 }

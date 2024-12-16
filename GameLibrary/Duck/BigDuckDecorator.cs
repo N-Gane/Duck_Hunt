@@ -1,17 +1,13 @@
-﻿
-
-namespace GameLibrary.Duck
+﻿namespace GameLibrary.Duck
 {
     public class BigDuckDecorator : DuckDecorator
     {
-
         /// <summary>
         /// Конструктор класса
         /// </summary>
         /// <param name="duck"></param>
         public BigDuckDecorator(Duck duck) : base(duck)
         {
-
         }
 
         /// <summary>

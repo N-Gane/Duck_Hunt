@@ -1,5 +1,4 @@
-﻿
-namespace GameEngine
+﻿namespace GameEngine
 {
     /// <summary>
     /// Абстрактный класс, описывающий сценарий поведения игрового объекта

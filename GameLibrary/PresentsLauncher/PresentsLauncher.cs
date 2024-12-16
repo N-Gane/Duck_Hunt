@@ -1,7 +1,8 @@
 ﻿using GameEngine;
-using GameLibrary.Factory;
-using OpenTK;
 
+using GameLibrary.Factory;
+
+using OpenTK;
 
 namespace GameLibrary.PresentsLauncher
 {

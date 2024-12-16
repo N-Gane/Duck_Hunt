@@ -17,6 +17,7 @@ namespace Client
             }
             else MessageBox.Show("Config file not found.");
         }
+
         private void btnConnect_Click(object sender, EventArgs e)
         {
             ConnectionOptions.Port = Convert.ToInt32(port_textbox.Text);
@@ -24,6 +25,7 @@ namespace Client
             DialogResult = DialogResult.OK;
             Close();
         }
+
         private void returnBtn_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;

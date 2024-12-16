@@ -1,6 +1,6 @@
 ﻿using GameEngine;
-using GameLibrary.Game;
 
+using GameLibrary.Game;
 
 namespace GameLibrary.Scripts
 {
@@ -38,6 +38,5 @@ namespace GameLibrary.Scripts
                 gameObject.SetComponent(deathScript);
             }
         }
-
     }
 }

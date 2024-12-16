@@ -1,8 +1,9 @@
 ﻿using GameEngine;
+
 using GameLibrary.Prize;
 using GameLibrary.Scripts;
-using OpenTK;
 
+using OpenTK;
 
 namespace GameLibrary.Factory
 {
@@ -11,7 +12,7 @@ namespace GameLibrary.Factory
     /// </summary>
     public class FactoryPrize : Factory
     {
-        Prize.Prize prize;
+        private Prize.Prize prize;
 
         /// <summary>
         /// Метод реализующий гибкую генерацию призов случайных типов
@@ -38,6 +39,7 @@ namespace GameLibrary.Factory
                     prize.SetComponent(new Position(position, scale));
                     prize.SetComponent(prizeScript1);
                     return prize;
+
                 case 2:
                     prize = new BulletPrize();
                     var colliderComponent21 = new ColliderComponents();

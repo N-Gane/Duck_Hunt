@@ -1,5 +1,4 @@
-﻿
-namespace GameEngine
+﻿namespace GameEngine
 {
     /// <summary>
     /// Класс, хранящий текстуры

@@ -1,5 +1,7 @@
 ﻿using GameEngine;
+
 using GameLibrary.Scripts;
+
 using OpenTK;
 
 namespace GameLibrary.Duck
@@ -42,8 +44,6 @@ namespace GameLibrary.Duck
             duck.SetComponent(script);
 
             return duck;
-
         }
-
     }
 }

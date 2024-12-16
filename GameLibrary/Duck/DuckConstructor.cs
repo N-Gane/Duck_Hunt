@@ -1,10 +1,11 @@
-﻿using GameEngine;
-using System;
+﻿using System;
+
+using GameEngine;
 
 namespace GameLibrary.Duck
 {
     /// <summary>
-    /// Абстрактный класс конструктора уток 
+    /// Абстрактный класс конструктора уток
     /// </summary>
     public abstract class DuckConstructor
     {
@@ -18,6 +19,5 @@ namespace GameLibrary.Duck
         protected Random random = new Random();
 
         public abstract Duck CreateDuck();
-
     }
 }

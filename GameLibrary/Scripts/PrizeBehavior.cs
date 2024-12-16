@@ -1,13 +1,12 @@
 ﻿using GameEngine;
-using OpenTK;
 
+using OpenTK;
 
 namespace GameLibrary.Scripts
 {
     internal class PrizeBehavior : ObjectScript
     {
-
-        Game.Game game;
+        private Game.Game game;
 
         /// <summary>
         /// Инициализация скрипта

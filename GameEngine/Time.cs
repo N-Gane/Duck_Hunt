@@ -5,7 +5,6 @@ namespace GameEngine
 {
     public static class Time
     {
-
         static Time()
         {
             _watch = new Stopwatch();
