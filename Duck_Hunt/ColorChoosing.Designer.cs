@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ColorChoosing));
             this.lbColor = new System.Windows.Forms.Label();
             this.tbColor = new System.Windows.Forms.TextBox();
             this.chooseRedPlayerBtn = new System.Windows.Forms.Button();
@@ -40,29 +39,31 @@
             // lbColor
             // 
             this.lbColor.AutoSize = true;
-            this.lbColor.Location = new System.Drawing.Point(378, 182);
+            this.lbColor.Location = new System.Drawing.Point(504, 224);
+            this.lbColor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbColor.Name = "lbColor";
-            this.lbColor.Size = new System.Drawing.Size(72, 13);
+            this.lbColor.Size = new System.Drawing.Size(91, 16);
             this.lbColor.TabIndex = 0;
             this.lbColor.Text = "Выбери цвет";
             // 
             // tbColor
             // 
             this.tbColor.Enabled = false;
-            this.tbColor.Location = new System.Drawing.Point(339, 198);
+            this.tbColor.Location = new System.Drawing.Point(452, 244);
+            this.tbColor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbColor.Name = "tbColor";
-            this.tbColor.Size = new System.Drawing.Size(146, 20);
+            this.tbColor.Size = new System.Drawing.Size(193, 22);
             this.tbColor.TabIndex = 32;
             // 
             // chooseRedPlayerBtn
             // 
-            this.chooseRedPlayerBtn.BackColor = System.Drawing.Color.White;
-            this.chooseRedPlayerBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chooseRedPlayerBtn.BackgroundImage")));
+            this.chooseRedPlayerBtn.BackColor = System.Drawing.Color.Brown;
             this.chooseRedPlayerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chooseRedPlayerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chooseRedPlayerBtn.Location = new System.Drawing.Point(339, 241);
+            this.chooseRedPlayerBtn.Location = new System.Drawing.Point(452, 297);
+            this.chooseRedPlayerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chooseRedPlayerBtn.Name = "chooseRedPlayerBtn";
-            this.chooseRedPlayerBtn.Size = new System.Drawing.Size(70, 70);
+            this.chooseRedPlayerBtn.Size = new System.Drawing.Size(93, 86);
             this.chooseRedPlayerBtn.TabIndex = 33;
             this.chooseRedPlayerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.chooseRedPlayerBtn.UseVisualStyleBackColor = false;
@@ -70,13 +71,13 @@
             // 
             // chooseBluePlayerBtn
             // 
-            this.chooseBluePlayerBtn.BackColor = System.Drawing.Color.White;
-            this.chooseBluePlayerBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("chooseBluePlayerBtn.BackgroundImage")));
+            this.chooseBluePlayerBtn.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.chooseBluePlayerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chooseBluePlayerBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.chooseBluePlayerBtn.Location = new System.Drawing.Point(415, 241);
+            this.chooseBluePlayerBtn.Location = new System.Drawing.Point(553, 297);
+            this.chooseBluePlayerBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.chooseBluePlayerBtn.Name = "chooseBluePlayerBtn";
-            this.chooseBluePlayerBtn.Size = new System.Drawing.Size(70, 70);
+            this.chooseBluePlayerBtn.Size = new System.Drawing.Size(93, 86);
             this.chooseBluePlayerBtn.TabIndex = 34;
             this.chooseBluePlayerBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.chooseBluePlayerBtn.UseVisualStyleBackColor = false;
@@ -88,9 +89,10 @@
             this.returnBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.returnBtn.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.returnBtn.ForeColor = System.Drawing.Color.White;
-            this.returnBtn.Location = new System.Drawing.Point(274, 366);
+            this.returnBtn.Location = new System.Drawing.Point(365, 450);
+            this.returnBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.returnBtn.Name = "returnBtn";
-            this.returnBtn.Size = new System.Drawing.Size(135, 35);
+            this.returnBtn.Size = new System.Drawing.Size(180, 43);
             this.returnBtn.TabIndex = 35;
             this.returnBtn.Text = "Back";
             this.returnBtn.UseVisualStyleBackColor = false;
@@ -102,9 +104,10 @@
             this.connect_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.connect_button.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.connect_button.ForeColor = System.Drawing.Color.White;
-            this.connect_button.Location = new System.Drawing.Point(415, 366);
+            this.connect_button.Location = new System.Drawing.Point(553, 450);
+            this.connect_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.connect_button.Name = "connect_button";
-            this.connect_button.Size = new System.Drawing.Size(135, 35);
+            this.connect_button.Size = new System.Drawing.Size(180, 43);
             this.connect_button.TabIndex = 36;
             this.connect_button.Text = "Connect";
             this.connect_button.UseVisualStyleBackColor = false;
@@ -112,15 +115,16 @@
             // 
             // ColorChoosing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.connect_button);
             this.Controls.Add(this.returnBtn);
             this.Controls.Add(this.chooseBluePlayerBtn);
             this.Controls.Add(this.chooseRedPlayerBtn);
             this.Controls.Add(this.tbColor);
             this.Controls.Add(this.lbColor);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ColorChoosing";
             this.Text = "ColorChoosing";
             this.ResumeLayout(false);
